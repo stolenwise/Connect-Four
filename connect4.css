@@ -1,0 +1,155 @@
+/* game board table */
+
+body {
+  background: rgb(63, 251, 185);
+  background: linear-gradient(
+    216deg,
+    rgb(0, 255, 166) 0%,
+    rgb(182, 126, 251) 100%
+  );
+}
+
+@keyframes spinBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinning-background1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    216deg,
+    rgb(0, 255, 166) 0%,
+    rgb(182, 126, 251) 100%
+  ); /* Customize gradient colors here */
+  background-size: 200% 200%;
+  z-index: -1; /* Sends the background behind everything else */
+  animation: spinBackground 60s linear infinite; /* Adjust duration to control speed */
+}
+@keyframes spinBackground2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.spinning-background2 {
+  position: fixed;
+  top: -500px;
+  left: -500px;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    216deg,
+    rgb(182, 217, 205) 0%,
+    rgb(248, 128, 109) 100%
+  ); /* Customize gradient colors here */
+  background-size: 200% 200%;
+  z-index: -2; /* Sends the background behind everything else */
+  animation: spinBackground 60s linear infinite; /* Adjust duration to control speed */
+}
+
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#game,
+#button,
+#message,
+#p1-input,
+#p2-input {
+  display: flex;
+  justify-content: center;
+}
+
+#p1-input,
+#p2-input,
+#button,
+#bt1,
+#btn2 {
+  margin-top: 2rem;
+  align-content: center;
+}
+
+#btn1 {
+  height: 3rem;
+  width: 10rem;
+  padding: 0;
+  border: 2px solid black;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#p1-input,
+#p2-input {
+  margin-top: 1rem;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+#p1-color,
+#p2-color {
+  height: 2rem;
+  width: 15rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#message {
+  margin-top: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 5px #000000;
+  color: white;
+}
+
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+#column-top td {
+  border: dashed 5px lightgray;
+}
+
+#column-top td:hover {
+  background-color: gold;
+  color: black;
+  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+}
